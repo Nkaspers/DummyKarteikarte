@@ -52,18 +52,14 @@ public class Controller {
     @FXML
     private void increaseFontSize() {
         if(fontSize<7){
-            fontSize += 1;
-            webView.getEngine().executeScript("document.execCommand(\"fontSize\", false, \""+fontSize+"\");");
+            webView.getEngine().executeScript("document.execCommand(\"fontSize\", false, \""+ ++fontSize +"\");");
         }
     }
     @FXML
     private void decreaseFontSize() {
         if(fontSize>1){
-            fontSize -= 1;
-            webView.getEngine().executeScript("document.execCommand(\"fontSize\", false, \""+fontSize+"\");");
+            webView.getEngine().executeScript("document.execCommand(\"fontSize\", false, \""+ --fontSize +"\");");
         }
-
-
     }
 
 }
