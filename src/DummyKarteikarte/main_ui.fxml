@@ -23,7 +23,7 @@
                      </font>
                   </Button>
                   <Button fx:id="underlineBtn" mnemonicParsing="false" onAction="#makeUnderlined" prefHeight="25.0" prefWidth="30.0" text="U" underline="true" />
-                  <Button fx:id="italicBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" text="I">
+                  <Button fx:id="italicBtn" mnemonicParsing="false" onAction="#makeItalic" prefHeight="25.0" prefWidth="30.0" text="I">
                      <font>
                         <Font name="System Italic" size="12.0" />
                      </font>

@@ -21,7 +21,7 @@ public class Controller {
     @FXML
     WebView webView;
 
-    private int fontSize = 10;
+    private int fontSize = 3;
 
     @FXML
     public void initialize() {
@@ -39,6 +39,7 @@ public class Controller {
         webView.getEngine().executeScript("document.execCommand(\"bold\");");
     }
 
+    @FXML
     private void makeItalic() {
         webView.getEngine().executeScript("document.execCommand(\"italic\");");
     }
@@ -50,24 +51,19 @@ public class Controller {
 
     @FXML
     private void increaseFontSize() {
-        fontSize += 3;
-        webView.getEngine().executeScript("document.execCommand(\"fontSize\", false, \"7\");" +
-                "var fontElements = window.getSelection().anchorNode.parentNode" +
-                "fontElements.removeAttribute(\"size\");" +
-                "fontElements.style.fontSize = \""+ fontSize + "px\";");    }
-
+        if(fontSize<7){
+            fontSize += 1;
+            webView.getEngine().executeScript("document.execCommand(\"fontSize\", false, \""+fontSize+"\");");
+        }
+    }
     @FXML
     private void decreaseFontSize() {
-        fontSize -= 3;
-        webView.getEngine().executeScript("document.execCommand(\"fontSize\", false, \"7\");" +
-        "var fontElements = window.getSelection().anchorNode.parentNode" +
-        "fontElements.removeAttribute(\"size\");" +
-        "fontElements.style.fontSize = \""+ fontSize + "px\";");
+        if(fontSize>1){
+            fontSize -= 1;
+            webView.getEngine().executeScript("document.execCommand(\"fontSize\", false, \""+fontSize+"\");");
+        }
+
+
     }
 
-
-    //Bold
-    //Italic
-    //Unterstrichen
-    //Größer/Kleiner
 }
