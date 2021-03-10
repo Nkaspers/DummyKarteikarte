@@ -15,6 +15,7 @@
       </WebView>
       <VBox alignment="CENTER" prefHeight="400.0" prefWidth="193.0">
          <children>
+            <ColorPicker fx:id="colorPicker" onAction="#colorPicker" />
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Button fx:id="boldBtn" mnemonicParsing="false" onAction="#makeBold" prefHeight="25.0" prefWidth="31.0" text="B ">
@@ -45,6 +46,7 @@
                   </Button>
                </children>
             </HBox>
+            <ChoiceBox fx:id="fonttypeCb" prefWidth="150.0" />
          </children></VBox>
    </children>
 </HBox>
