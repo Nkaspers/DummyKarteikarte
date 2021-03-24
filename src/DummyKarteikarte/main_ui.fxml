@@ -6,16 +6,18 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.web.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DummyKarteikarte.Controller">
+<HBox fx:id="hboxMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DummyKarteikarte.Controller">
    <children>
-      <WebView fx:id="webView" prefHeight="380.0" prefWidth="374.0">
-         <HBox.margin>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </HBox.margin>
-      </WebView>
-      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="193.0">
+      <VBox prefHeight="400.0" prefWidth="357.0">
          <children>
-            <ColorPicker fx:id="colorPicker" onAction="#colorPicker" />
+            <WebView fx:id="webviewHead" prefHeight="41.0" prefWidth="357.0" />
+            <WebView fx:id="webView" prefHeight="372.0" prefWidth="122.0" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="224.0">
+         <children>
+            <ColorPicker fx:id="colorPicker" onAction="#colorPicker" prefHeight="25.0" prefWidth="133.0" />
+            <ChoiceBox fx:id="fonttypeCb" prefHeight="24.0" prefWidth="133.0" />
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Button fx:id="boldBtn" mnemonicParsing="false" onAction="#makeBold" prefHeight="25.0" prefWidth="31.0" text="B ">
@@ -46,7 +48,9 @@
                   </Button>
                </children>
             </HBox>
-            <ChoiceBox fx:id="fonttypeCb" prefWidth="150.0" />
-         </children></VBox>
+         </children>
+         <HBox.margin>
+            <Insets top="20.0" />
+         </HBox.margin></VBox>
    </children>
 </HBox>
